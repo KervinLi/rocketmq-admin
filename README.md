@@ -1,0 +1,2 @@
+# rocketmq-admin
+rocketmq-admin是基于apache开源的控制台项目进行前端展示，进行了MQ不同条件下生产与消费相关性能方面测试工作。
