@@ -162,4 +162,54 @@ public class RMQConfigure {
         }
 
     }
+
+    private String consumerGroup;
+
+    private String producerGroup;
+
+    private String commonTopic;
+
+    private String messageTag;
+
+    private String emailTag;
+
+    public String getConsumerGroup() {
+        return consumerGroup;
+    }
+
+    public void setConsumerGroup(String consumerGroup) {
+        this.consumerGroup = consumerGroup;
+    }
+
+    public String getProducerGroup() {
+        return producerGroup;
+    }
+
+    public void setProducerGroup(String producerGroup) {
+        this.producerGroup = producerGroup;
+    }
+
+    public String getCommonTopic() {
+        return commonTopic;
+    }
+
+    public void setCommonTopic(String commonTopic) {
+        this.commonTopic = commonTopic;
+    }
+
+    public String getMessageTag() {
+        return messageTag;
+    }
+
+    public void setMessageTag(String messageTag) {
+        this.messageTag = messageTag;
+    }
+
+    public String getEmailTag() {
+        return emailTag;
+    }
+
+    public void setEmailTag(String emailTag) {
+        this.emailTag = emailTag;
+    }
 }
