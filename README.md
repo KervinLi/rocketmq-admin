@@ -1,6 +1,14 @@
 # RocketMQ-admin
 RocketMQ-admin是基于apache开源的控制台项目进行前端展示，进行了MQ不同条件下生产与消费相关性能方面测试工作。
 
+## 测试周期性生产并堆积
+* 定时任务模拟每分钟产生一百个消息任务(org.apache.rocketmq.console.task.MessageHandleJob)
+* 消费着模拟模拟1秒钟消费一个消息任务(org.apache.rocketmq.console.consumer.MessageConsumer)
+
+## 测试多线程方式处理消费堆积问题
+* consumeThreadMin(Minimum consumer thread number)
+* consumeThreadMax(Max consumer thread number)
+
 # RocketMQ-console使用文档
 
 ## 运维页面

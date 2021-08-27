@@ -26,8 +26,8 @@ public class MessageConsumer implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
         // Instantiate with specified consumer group name.
         DefaultMQPushConsumer consumer = new DefaultMQPushConsumer(configure.getConsumerGroup());
-        consumer.setConsumeThreadMax(2);
-        consumer.setConsumeThreadMin(1);
+        consumer.setConsumeThreadMax(10);
+        consumer.setConsumeThreadMin(10);
 
         // Specify name server addresses.
         consumer.setNamesrvAddr(configure.getNamesrvAddr());
@@ -47,7 +47,7 @@ public class MessageConsumer implements ApplicationRunner {
                 try {
                     //模拟1秒消费一个消息
                     Thread.sleep(1000);
-                    log.info("消费消息数据成功：key:{},body:{}",key, msg);
+                    log.info("消费消息数据成功：TID:{},body:{}",Thread.currentThread().getId(), msg);
                 } catch (Exception e) {
                     log.error("消息消费失败{}，将再次订阅：{}", id, e.getMessage());
                     return ConsumeConcurrentlyStatus.RECONSUME_LATER;
